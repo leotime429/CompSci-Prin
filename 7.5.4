@@ -1,0 +1,22 @@
+"""
+ This program simulates the flipping of a coin.
+ On each run, the program either prints Heads or Tails.
+ Heads has a 50% chance of being printed.
+ Tails has a 50% chance of being printed.
+"""
+import random
+"""
+ Simulates a single coin flip.
+ Uses a random generator to simulate a 50% chance of getting heads, and
+ a 50% chance of getting tails.
+ Returns either the string "Heads" or the string "Tails"
+"""
+def simulate_flip():
+    flipped = random.randint(0,1)
+    if flipped == 1:
+        return "Heads"
+    else:
+        return "Tails"
+
+result = simulate_flip()
+print(result)
