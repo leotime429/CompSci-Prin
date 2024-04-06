@@ -1,0 +1,16 @@
+# Get text from the user
+text = input("Enter some text: ")
+indices = []
+
+# Count instances of words that contain "owl"
+# Note: test cases only have lowercase owl
+# casting to lower is not required, but may be a
+# good practice.
+count = 0
+for idx, word in enumerate(text.split()):
+    if "owl" in word.lower():
+        indices.append(idx)
+
+# Report results
+print("There were " + str(len(indices)) + " words that contained \"owl\".")
+print("They occurred at indices: " + str(indices))
