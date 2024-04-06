@@ -1,0 +1,12 @@
+# Start with an empty list
+names = []
+
+# Ask for five names, and store the LAST NAMES in the list
+for i in range(5):
+    name = input("Name: ")
+    name_as_list = name.split()
+    names.append(name_as_list[-1])
+
+# Sort and print
+names.sort()
+print(names)
