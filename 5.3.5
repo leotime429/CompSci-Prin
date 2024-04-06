@@ -1,0 +1,17 @@
+# This program should draw a stop light
+
+LIGHT_RADIUS = 25
+STOPLIGHT_WIDTH = 100
+STOPLIGHT_HEIGHT = 250
+BUFFER = 75
+
+# Draws a circle 
+def draw_circle(y_pos, color):
+    center_x = get_width() / 2
+    light = Circle(LIGHT_RADIUS)
+    light.set_color(color)
+    light.set_position(center_x, y_pos)
+    add(light)
+
+
+center_y = get_height() / 2
