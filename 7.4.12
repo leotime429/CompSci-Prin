@@ -1,0 +1,14 @@
+arr = []
+
+arr.append(3)
+arr.append("hello")
+arr.append(False)
+
+print(arr[0])
+print(arr[1])
+print(arr[2])
+
+arr.remove(3)
+arr.remove(False)
+
+print(arr)
