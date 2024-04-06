@@ -1,0 +1,66 @@
+"""
+ This program has Karel paint a checkerboard
+"""
+
+"""
+This def has Karel paint a single row of the checkerboard, starting
+with the color black and alternating between red and black.
+Precondition: Karel is on either the left or right edge of the world. If
+Karel is on the left edge, Karel is facing east. If Karel is on the right
+edge, Karel is facing West.
+Postcondition: Karel has traversed the row and painted alternating red and
+black squares. Karel is either facing East and is up against the East wall
+or Karel is facing West and is up against the West wall.
+"""
+def paint_row():
+    for i in range(3):
+        paint(color["black"])
+        move()
+        paint(color["red"])
+        move()
+    paint(color["black"])
+    move()
+    paint(color["red"])
+
+"""
+This def has Karel move up one row.
+Precondition: Karel is facing East and touching the East wall, or Karel
+is facing West and touching the West wall. Karel is not on the top row.
+Postcondition: Karel has moved up one row and is facing the opposite direction.
+"""
+def move_up():
+    if facing_east():
+        turn_left()
+        move()
+        turn_left()
+    else:
+        turn_right()
+        move()
+        turn_right()
+
+
+"""
+This def has Karel paint a checkerboard.
+Precondition: Karel is in the bottom left corner facing East.
+Postcondition: Karel is in the top left corner facing West, and has painted
+alternating red and black squares on the entire world.
+"""
+def paint_board():
+    for i in range(7):
+        paint_row()
+        move_up()
+    paint_row()
+
+"""
+This def has Karel come back to the starting position.
+Precondition: Karel is in the top left corner facing West.
+Postcondition: Karel is in the bottom left corner facing East.
+"""
+def come_home():
+    turn_left()
+    for i in range(7):
+        move()
+    turn_left()
+
+paint_board()
+come_home()
