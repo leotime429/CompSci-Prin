@@ -1,0 +1,28 @@
+# This program has Karel fetch a ball and come back. 
+
+# This program takes Karel to the tennis ball.
+def go_to_ball():
+    move_up_and_right()
+
+# This moves Karel to the starting position.
+def come_back():
+    move_up_and_right()
+
+# This function has Karel move in a zig zag shape up
+# four spaces and to the right
+def move_up_and_right():
+    move()
+    turn_left()
+    move()
+    move()
+    move()
+    move()
+    turn_right()
+    move()
+
+go_to_ball()
+take_ball()
+turn_around()
+come_back()
+turn_around()
+put_ball()
