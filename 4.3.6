@@ -1,0 +1,7 @@
+points_per_game = int(input("Points per game? "))
+rebounds_per_game = int(input("Rebounds per game? "))
+assists_per_game = int(input("Assists per game? "))
+is_all_star = points_per_game >= 25 or \
+	(points_per_game >= 10 and rebounds_per_game >= 10 and assists_per_game >= 10)
+
+print("Is all star? " + str(is_all_star))
