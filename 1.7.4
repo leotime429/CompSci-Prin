@@ -1,0 +1,41 @@
+# This has karel build two towers, with three balls in each tower.
+# This top comment should provide a summary of the program.
+# There must be multiple functions, and comments on each function.
+
+# Turns karel right
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+
+# Has karel come down from the top of the tower.
+# Precondition: Karel is facing north
+# Postcondition: Karel is facing east at the bottom of the tower
+def come_down():
+    turn_right()
+    move()
+    move()
+    move()
+    turn_left()
+
+
+# This builds a three ball tower.
+# Precondition: Karel is at base of tower facing east
+# Postcondition: Karel has laid three balls, facing north
+def build_tower():
+    turn_left()
+    put_ball()
+    move()
+    put_ball()
+    move()
+    put_ball()
+    move()
+    turn_right()
+
+move()
+build_tower()
+come_down()
+move()
+move()
+build_tower()
