@@ -1,0 +1,40 @@
+# This program has Karel double a stack of balls that are one spot
+# ahead, and return to the starting position.
+
+# This takes one ball from the pile and places two balls
+# in the pile next to it.
+def take_one_put_two_beside():
+    take_ball()
+    move()
+    put_ball()
+    put_ball()
+    turn_around()
+    move()
+    turn_around()
+
+# This takes one ball from a pile and puts one more ball
+# in the pile next to it.
+def move_one_ball_back():
+    take_ball()
+    move()
+    put_ball()
+    turn_around()
+    move()
+    turn_around()
+    
+# This doubles a stack of balls.
+def double_balls():
+    while balls_present():
+        take_one_put_two_beside()
+    move()
+    turn_around()
+    while balls_present():
+        move_one_ball_back()
+    move()
+    turn_around()
+
+move()
+double_balls()
+turn_around()
+move()
+turn_around()
