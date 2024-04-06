@@ -1,0 +1,9 @@
+    for i in my_list:
+      if i == "eggplant":
+          my_list.remove(i)
+    
+    my_list.sort()
+    
+    my_list.reverse()
+    
+    return my_list
