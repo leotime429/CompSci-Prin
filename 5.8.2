@@ -1,0 +1,27 @@
+import random
+
+MIN = 0
+MAX = 100
+
+# This program will play a simple guessing game.
+# The user will guess, and the computer should print if
+# the guess was too high, too low, or correct.
+# 
+
+
+print("This program plays the guessing game.")
+print("Pick a number between " + str(MIN) + " and " + str(MAX))
+
+number_to_guess = random.randint(MIN, MAX)
+
+while True:
+    guess = int(input("What is your guess? "))
+
+    if guess == number_to_guess:
+        break
+    if guess > number_to_guess:
+        print("Your guess was too high.")
+    else:
+        print("Your guess was too low.")
+
+print("Correct!")
