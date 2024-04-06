@@ -1,0 +1,18 @@
+# Move along the wall
+# Put a ball where there isn't a door or gate
+def decorate_wall():
+    while front_is_clear():
+        if right_is_blocked():
+            put_ball()
+        move()
+    if right_is_blocked():
+        put_ball()
+
+# Go until Karel hits a wall
+def go_to_wall():
+    while front_is_clear():
+        move()
+
+go_to_wall()
+turn_left()
+decorate_wall()
