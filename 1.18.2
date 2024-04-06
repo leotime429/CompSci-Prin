@@ -1,0 +1,17 @@
+# This program will have Karel run around the racetrack
+# 8 times.
+
+# Karel runs one leg of the track and puts down a ball
+def run_side():
+    while front_is_clear():
+        move()
+    put_ball()
+    turn_left()
+    
+# This function has Karel run once around the track
+def run_lap():
+    for i in range(4):
+        run_side()
+
+for i in range(8):
+    run_lap()
