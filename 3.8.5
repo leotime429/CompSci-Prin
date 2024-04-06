@@ -1,0 +1,16 @@
+import random
+# Colors are optional
+COLORS = (Color.red, Color.orange, Color.yellow, 
+            Color.green, Color.blue)
+RECT_HEIGHT = 50
+RECT_WIDTH = 30
+
+# Draw a rectangle at x, y
+def draw_rectangle(x, y):
+    rect = Rectangle(RECT_WIDTH, RECT_HEIGHT)
+    rect.set_position(x - RECT_WIDTH / 2, y - RECT_HEIGHT / 2)
+    rect.set_color(random.choice(COLORS))
+    add(rect)
+
+# link to the mouse click event
+add_mouse_click_handler(draw_rectangle)
