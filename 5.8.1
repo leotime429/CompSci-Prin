@@ -1,0 +1,60 @@
+# Constants for body
+HEAD_RADIUS = 35
+BODY_WIDTH = HEAD_RADIUS * 2
+BODY_HEIGHT = 60
+NUM_FEET = 3
+FOOT_RADIUS = (BODY_WIDTH) / (NUM_FEET * 2)
+
+# Constants for eyes
+PUPIL_RADIUS = 4
+PUPIL_LEFT_OFFSET = 8
+PUPIL_RIGHT_OFFSET = 20
+EYE_RADIUS = 10
+EYE_OFFSET = 14
+
+# Draws a circle centered at x,y with given radius and color
+def draw_circle(x, y, radius, color):
+    circ = Circle(radius)
+    circ.set_color(color)
+    circ.set_position(x, y)
+    add(circ)
+
+
+# Draws the eyes of the ghost given x,y coordinates of whole ghost
+def make_eyes(x, y):
+    # Draw eyes
+    draw_circle(x - EYE_OFFSET, y, EYE_RADIUS, Color.white)
+    draw_circle(x + EYE_OFFSET, y, EYE_RADIUS, Color.white)
+    
+    # Draw pupils
+    draw_circle(x - PUPIL_LEFT_OFFSET, y, PUPIL_RADIUS, Color.blue)
+    draw_circle(x + PUPIL_RIGHT_OFFSET, y, PUPIL_RADIUS, Color.blue)
+    
+
+def draw_ghost(x, y, color):
+    
+    # Draw the head
+    draw_circle(x, y, HEAD_RADIUS, color)
+    
+    # Draw the body
+    body = Rectangle(BODY_WIDTH, BODY_HEIGHT)
+    body.set_position(x - BODY_WIDTH / 2, y)
+    body.set_color(color)
+    add(body)
+
+	# This is a bit more confusing since it
+	# draws a ghost with any number of feet
+    for i in range(NUM_FEET):
+	    start = -NUM_FEET + 1 + (i*2)
+	    draw_circle(x + start*FOOT_RADIUS, y + BODY_HEIGHT, FOOT_RADIUS, color)
+
+    make_eyes(x, y)
+    
+
+center_x = get_width() / 2
+center_y = get_height() / 2
+draw_ghost(center_x, center_y, Color.red)
+draw_ghost(100, 100, Color.green)
+draw_ghost(370, 150, Color.black)
+draw_ghost(40, 200, Color.orange)
+draw_ghost(300, 50, Color.yellow)
