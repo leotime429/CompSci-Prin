@@ -1,0 +1,23 @@
+NUM_CIRCLES = 15
+
+# This graphics program should draw a caterpillar. 
+# A caterpillar is made up of NUM_CIRCLES circles.
+# The circles should alternate red - green - red - green, etc
+# Use a for loop to draw the worm, 
+# centered vertically in the screen. 
+# Also, be sure that the worm is still drawn across 
+# the whole canvas, even if the value of NUM_CIRCLES is changed.
+
+RADIUS = (get_width() / NUM_CIRCLES) / 2
+center_y = get_height() / 2
+
+for i in range(NUM_CIRCLES):
+    if i % 2 == 0:
+        color = Color.green
+    else:
+        color = Color.red
+        
+    segment = Circle(RADIUS)
+    segment.set_color(color)
+    segment.set_position(i*RADIUS*2 + RADIUS, center_y)
+    add(segment)
