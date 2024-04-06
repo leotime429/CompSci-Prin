@@ -1,0 +1,51 @@
+# This code is going to draw a primitive looking robot face
+
+FACE_X = get_width() // 2
+FACE_Y = get_height() // 2
+FACE_RADIUS = 135
+
+EYE_RADIUS = 15
+EYE_OFFSET = 50
+
+MOUTH_OFFSET = 15
+MOUTH_WIDTH = 120
+MOUTH_HEIGHT = 30
+NUM_TEETH = 12
+
+# Draws a circle centered at x,y with given radius and color
+def draw_circle(x, y, radius, color):
+    circ = Circle(radius)
+    circ.set_color(color)
+    circ.set_position(x, y)
+    add(circ)
+
+
+# face
+draw_circle(FACE_X, FACE_Y, FACE_RADIUS, Color.gray)
+
+# eyes
+draw_circle(FACE_X - EYE_OFFSET, FACE_Y - EYE_OFFSET, EYE_RADIUS, Color.white)
+draw_circle(FACE_X + EYE_OFFSET, FACE_Y - EYE_OFFSET, EYE_RADIUS, Color.white)
+
+#mouth
+mouth_x = FACE_X - MOUTH_WIDTH // 2
+mouth_y = FACE_Y + MOUTH_OFFSET
+mouth = Rectangle(MOUTH_WIDTH, MOUTH_HEIGHT)
+mouth.set_position(mouth_x, mouth_y)
+mouth.set_color(Color.white)
+add(mouth)
+
+# teeth
+teeth_width = MOUTH_WIDTH // NUM_TEETH
+start = mouth_x + teeth_width
+end = mouth_x + NUM_TEETH * teeth_width
+
+for x in range(start, end, teeth_width):
+    tooth = Line(x, mouth_y, x, mouth_y + MOUTH_HEIGHT)
+    tooth.set_color(Color.black)
+    add(tooth)
+
+cross_line = Line(mouth_x, mouth_y + MOUTH_HEIGHT // 2, 
+        mouth_x + MOUTH_WIDTH, mouth_y + MOUTH_HEIGHT // 2)
+cross_line.set_color(Color.black)
+add(cross_line)
