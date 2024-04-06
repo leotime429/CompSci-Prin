@@ -1,0 +1,24 @@
+# Constants representing the radius of the top, middle,
+# and bottom snowball.
+BOTTOM_RADIUS = 100
+MID_RADIUS = 60
+TOP_RADIUS = 30
+
+bottom_y = get_height() - BOTTOM_RADIUS
+mid_y = bottom_y - BOTTOM_RADIUS - MID_RADIUS
+top_y = mid_y - MID_RADIUS - TOP_RADIUS
+
+bottom_circle = Circle(BOTTOM_RADIUS)
+bottom_circle.set_position(get_width() / 2, bottom_y)
+bottom_circle.set_color(Color.gray)
+add(bottom_circle)
+	
+middle_circle = Circle(MID_RADIUS)
+middle_circle.set_position(get_width() / 2, mid_y)
+middle_circle.set_color(Color.gray)
+add(middle_circle)
+	
+top_circle = Circle(TOP_RADIUS)
+top_circle.set_position(get_width() / 2, top_y)
+top_circle.set_color(Color.gray)
+add(top_circle)
