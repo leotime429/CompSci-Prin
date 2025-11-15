@@ -15,3 +15,19 @@ def draw_circle(y_pos, color):
 
 
 center_y = get_height() / 2
+
+box_x = (get_width() / 2) - STOPLIGHT_WIDTH / 2
+box_y = center_y - STOPLIGHT_HEIGHT / 2
+
+light_box = Rectangle(STOPLIGHT_WIDTH, STOPLIGHT_HEIGHT)
+light_box.set_color(Color.gray)
+light_box.set_position(box_x, box_y)
+add(light_box)
+
+draw_circle(center_y, Color.yellow)
+
+red_y = center_y - BUFFER
+draw_circle(red_y, Color.red)
+
+green_y = center_y  + BUFFER
+draw_circle(green_y, Color.green)
